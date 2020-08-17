@@ -1,0 +1,18 @@
+<view class="player-container" style="background:url({{picUrl}}) center/cover no-repeat"></view>
+<view class="player-mask"></view>
+<view class="player-info">
+	<view class="player-disc {{isPlaying? 'play':''}}">
+		<image class="player-img rotation  {{isPlaying?'':'rotation-paused'}}" src="{{picUrl}}"></image>
+	</view>
+</view>
+<!-- 进度条 -->
+<view class="progress-bar">
+	<x-progress-bar />
+</view>
+
+<!-- 控制面板 -->
+<view class="control">
+	<text class="iconfont icon-shangyishoushangyige" bind:tap="OnPrev"/>
+  <text class="iconfont {{isPlaying? 'icon-zanting1':'icon-bofang1'}} "bind:tap="togglePlaying"/>
+  <text class="iconfont icon-xiayigexiayishou" bind:tap="onNext"/>
+</view>
